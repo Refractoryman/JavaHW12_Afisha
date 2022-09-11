@@ -3,10 +3,9 @@ package ru.nenology.domain;
 public class AfishaManager {
 
     private String[] movies = new String[0];
-    private int limit;
+    private int limit = 10;
 
     public AfishaManager() {
-        limit = 10;
     }
 
     public AfishaManager(int limit) {
@@ -28,8 +27,8 @@ public class AfishaManager {
     }
 
     public String[] findLast() {
-        int resultSize;
-        if (limit < movies.length) {
+        int resultSize = movies.length;
+        if (limit <= resultSize) {
             resultSize = limit;
         } else {
             resultSize = movies.length;
